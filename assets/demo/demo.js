@@ -1,253 +1,178 @@
-materialKitDemo = {
+demo = {
 
-  initContactUsMap: function() {
-    var myLatlng = new google.maps.LatLng(44.433530, 26.093928);
-    var mapOptions = {
-      zoom: 14,
-      center: myLatlng,
-      styles: [{
-        "featureType": "water",
-        "stylers": [{
-          "saturation": 43
-        }, {
-          "lightness": -11
-        }, {
-          "hue": "#0088ff"
+  initDocChart: function() {
+    chartColor = "#FFFFFF";
+
+    // General configuration for the charts with Line gradientStroke
+    gradientChartOptionsConfiguration = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      tooltips: {
+        bodySpacing: 4,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest",
+        xPadding: 10,
+        yPadding: 10,
+        caretPadding: 10
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          display: 0,
+          gridLines: 0,
+          ticks: {
+            display: false
+          },
+          gridLines: {
+            zeroLineColor: "transparent",
+            drawTicks: false,
+            display: false,
+            drawBorder: false
+          }
+        }],
+        xAxes: [{
+          display: 0,
+          gridLines: 0,
+          ticks: {
+            display: false
+          },
+          gridLines: {
+            zeroLineColor: "transparent",
+            drawTicks: false,
+            display: false,
+            drawBorder: false
+          }
         }]
-      }, {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "hue": "#ff0000"
-        }, {
-          "saturation": -100
-        }, {
-          "lightness": 99
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-          "color": "#808080"
-        }, {
-          "lightness": 54
-        }]
-      }, {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#ece2d9"
-        }]
-      }, {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#ccdca1"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#767676"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      }, {
-        "featureType": "poi",
-        "stylers": [{
-          "visibility": "off"
-        }]
-      }, {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "visibility": "on"
-        }, {
-          "color": "#b8cb93"
-        }]
-      }, {
-        "featureType": "poi.park",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.sports_complex",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.medical",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.business",
-        "stylers": [{
-          "visibility": "simplified"
-        }]
-      }],
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: 15,
+          bottom: 15
+        }
+      }
     };
-    var map = new google.maps.Map(document.getElementById("contactUsMap"), mapOptions);
 
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      title: "Hello World!"
+    ctx = document.getElementById('lineChartExample').getContext("2d");
+
+    gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+    gradientStroke.addColorStop(0, '#80b6f4');
+    gradientStroke.addColorStop(1, chartColor);
+
+    gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+    gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+    gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
+
+    myChart = new Chart(ctx, {
+      type: 'line',
+      responsive: true,
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Active Users",
+          borderColor: "#f96332",
+          pointBorderColor: "#FFF",
+          pointBackgroundColor: "#f96332",
+          pointBorderWidth: 2,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 1,
+          pointRadius: 4,
+          fill: true,
+          backgroundColor: gradientFill,
+          borderWidth: 2,
+          data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
+        }]
+      },
+      options: gradientChartOptionsConfiguration
     });
-    marker.setMap(map);
   },
 
-  initContactUs2Map: function() {
-    var lat = 44.433530;
-    var long = 26.093928;
+  initLandingPageChart: function() {
 
-    var centerLong = long - 0.025;
+    var ctx = document.getElementById('chartBig').getContext("2d");
 
-    var myLatlng = new google.maps.LatLng(lat, long);
-    var centerPosition = new google.maps.LatLng(lat, centerLong);
+    var gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
+    gradientFill.addColorStop(0, "rgba(228, 76, 196, 0.0)");
+    gradientFill.addColorStop(1, "rgba(228, 76, 196, 0.14)");
 
-    var mapOptions = {
-      zoom: 14,
-      center: centerPosition,
-      styles: [{
-        "featureType": "water",
-        "stylers": [{
-          "saturation": 43
-        }, {
-          "lightness": -11
-        }, {
-          "hue": "#0088ff"
+    var chartBig = new Chart(ctx, {
+      type: 'line',
+      responsive: true,
+      data: {
+        labels: ["JUN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+        datasets: [{
+          label: "Data",
+          fill: true,
+          backgroundColor: gradientFill,
+          borderColor: '#e44cc4',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: '#e44cc4',
+          pointBorderColor: 'rgba(255,255,255,0)',
+          pointHoverBackgroundColor: '#be55ed',
+          //pointHoverBorderColor:'rgba(35,46,55,1)',
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: [80, 160, 200, 160, 250, 280, 220, 190, 200, 250, 290, 320]
         }]
-      }, {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "hue": "#ff0000"
-        }, {
-          "saturation": -100
-        }, {
-          "lightness": 99
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-          "color": "#808080"
-        }, {
-          "lightness": 54
-        }]
-      }, {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#ece2d9"
-        }]
-      }, {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#ccdca1"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#767676"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      }, {
-        "featureType": "poi",
-        "stylers": [{
-          "visibility": "off"
-        }]
-      }, {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "visibility": "on"
-        }, {
-          "color": "#b8cb93"
-        }]
-      }, {
-        "featureType": "poi.park",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.sports_complex",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.medical",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.business",
-        "stylers": [{
-          "visibility": "simplified"
-        }]
-      }],
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-    };
-    var map = new google.maps.Map(document.getElementById("contactUs2Map"), mapOptions);
+      },
+      options: {
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
 
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      title: "Hello World!"
-    });
-    marker.setMap(map);
-  },
+        tooltips: {
+          backgroundColor: '#fff',
+          titleFontColor: '#ccc',
+          bodyFontColor: '#666',
+          bodySpacing: 4,
+          xPadding: 12,
+          mode: "nearest",
+          intersect: 0,
+          position: "nearest"
+        },
+        responsive: true,
+        scales: {
+          yAxes: [{
+            barPercentage: 1.6,
+            gridLines: {
+              drawBorder: false,
+              color: 'rgba(0,0,0,0.0)',
+              zeroLineColor: "transparent",
+            },
+            ticks: {
+              display: false,
+              suggestedMin: 0,
+              suggestedMax: 350,
+              padding: 20,
+              fontColor: "#9a9a9a"
+            }
+          }],
 
-  presentationAnimations: function() {
-    $(function() {
-
-      var $window = $(window),
-        isTouch = Modernizr.touch;
-
-      if (isTouch) {
-        $('.add-animation').addClass('animated');
+          xAxes: [{
+            barPercentage: 1.6,
+            gridLines: {
+              drawBorder: false,
+              color: 'rgba(0,0,0,0)',
+              zeroLineColor: "transparent",
+            },
+            ticks: {
+              padding: 20,
+              fontColor: "#9a9a9a"
+            }
+          }]
+        }
       }
-
-      $window.on('scroll', revealAnimation);
-
-      function revealAnimation() {
-        // Showed...
-        $(".add-animation:not(.animated)").each(function() {
-          var $this = $(this),
-            offsetTop = $this.offset().top,
-            scrolled = $window.scrollTop(),
-            win_height_padded = $window.height();
-          if (scrolled + win_height_padded > offsetTop) {
-            $this.addClass('animated');
-          }
-        });
-        // Hidden...
-        $(".add-animation.animated").each(function(index) {
-          var $this = $(this),
-            offsetTop = $this.offset().top;
-          scrolled = $window.scrollTop(),
-            windowHeight = $window.height();
-
-          win_height_padded = windowHeight * 0.8;
-          if (scrolled + win_height_padded < offsetTop) {
-            $(this).removeClass('animated')
-          }
-        });
-      }
-
-      revealAnimation();
     });
+
 
   }
-};
+}
