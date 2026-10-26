@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giacomo Antonioli</title>
+<meta name="description" content="Giacomo Antonioli, PhD candidate in quantum numerical linear algebra, University of Pisa.">
+<style>
+  body { max-width: 46em; margin: 2em auto; padding: 0 1em; font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.45; color: #000; background: #fff; }
+  a { color: #00e; } a:visited { color: #551a8b; }
+  h1 { font-size: 1.7em; margin: 0 0 .2em; }
+  h2 { font-size: 1.2em; margin: 1.6em 0 .4em; border-bottom: 1px solid #999; }
+  img.me { float: right; width: 150px; margin: 0 0 1em 1.2em; border: 1px solid #999; }
+  ul { padding-left: 1.2em; } li { margin-bottom: .45em; }
+  .small { font-size: .9em; color: #333; }
+  hr { clear: both; border: 0; }
+  @media (max-width: 520px) { img.me { float: none; display: block; margin: 0 0 1em; } }
+</style>
+</head>
+<body>
+
+<img class="me" src="photo.jpg" alt="Giacomo Antonioli">
+
+<h1>Giacomo Antonioli</h1>
+<p>
+PhD candidate, Department of Computer Science, University of Pisa<br>
+Email: <a href="mailto:giacomo.antonioli@phd.unipi.it">giacomo.antonioli@phd.unipi.it</a><br>
+<a href="https://scholar.google.com/citations?user=-dHPo80AAAAJ">Google Scholar</a> |
+<a href="https://orcid.org/0009-0000-6687-0357">ORCID</a> |
+<a href="https://github.com/Giacomo-Antonioli">GitHub</a> |
+<a href="https://www.linkedin.com/in/giacomo-antonioli/">LinkedIn</a> |
+<a href="cv.pdf">CV (PDF)</a>
+</p>
+
+<p>
+I work on quantum numerical linear algebra: how the structure of a matrix can be used to build cheaper
+quantum circuits for it. My PhD at the University of Pisa (expected February 2027) is supervised by
+Gianna Maria Del Corso (University of Pisa) and Roel Van Beeumen (Lawrence Berkeley National Laboratory).
+Thesis: <i>Quantum Linear Algebra: From Matrix Representations to Structured Algorithms and Computational Realization</i>.
+</p>
+
+<h2>Research interests</h2>
+<ul>
+<li>Block encodings of structured matrices (semiseparable, hierarchical low-rank / HODLR).</li>
+<li>Quantum algorithms for matrix functions <i>f(A)b</i>, linear systems and Krylov-type methods; tailored alternatives to QSVT.</li>
+<li>Resource-aware circuits (depth, ancillas) and quantum circuit simulation (QCLAB, QCLAB++).</li>
+<li>Quantum machine learning: variational circuits for state preparation and classification, quantum orthogonal neural networks.</li>
+</ul>
+
+<h2>Publications</h2>
+<p class="small">Journal and proceedings</p>
+<ul>
+<li>G. Antonioli, P. Boito, G. M. Del Corso, M. Porcelli.
+<i>Quantum block encoding for one-pair semiseparable matrices.</i>
+Numerical Algorithms, 2026. [<a href="https://arxiv.org/abs/2603.19130">arXiv</a>]</li>
+<li>G. Antonioli, A. Berti, G. M. Del Corso, A. Poggiali.
+<i>State vector to block encoding: an efficient quantum circuit transformation.</i>
+ICTCS 2026, CEUR Workshop Proceedings vol. 4269, pp. 376&ndash;381. [<a href="https://ceur-ws.org/Vol-4269/">CEUR</a>]</li>
+<li>G. Antonioli, A. Berti, A. Poggiali, A. Bernasconi, G. M. Del Corso.
+<i>Outlier detection and other applications of quantum matrix multiplication.</i>
+IEEE IPDPSW 2025, pp. 509&ndash;518.</li>
+<li>A. Poggiali, G. Antonioli, A. Berti, G. M. Del Corso, R. Guidotti.
+<i>Variational decision trees with structured ansatzes.</i>
+IEEE QCE 2025, vol. 2, pp. 428&ndash;429.</li>
+<li>A. Berti, G. Antonioli, A. Bernasconi, G. M. Del Corso, R. Guidotti, A. Poggiali.
+<i>Variational compression of circuits for state preparation.</i>
+IEEE QCE 2024, vol. 2, pp. 44&ndash;48. [<a href="https://doi.org/10.1109/QCE60285.2024.10250">DOI</a>]</li>
+</ul>
+<p class="small">Preprints</p>
+<ul>
+<li>G. Antonioli, G. M. Del Corso, R. Van Beeumen.
+<i>Block encoding of semiseparable matrices via their generators.</i> 2026. [<a href="https://arxiv.org/abs/2610.13228">arXiv</a>]</li>
+<li>G. Antonioli, A. Bernasconi, A. Berti, G. M. Del Corso, A. Poggiali.
+<i>Two-Tower quantum matrix chain multiplication: trading qubits for depth.</i>
+2026, submitted. [<a href="https://arxiv.org/abs/2607.13191">arXiv</a>]</li>
+</ul>
+
+<h2>Software</h2>
+<ul>
+<li><a href="https://github.com/QuantumComputingLab/qclab">QCLAB</a> (MATLAB) and
+<a href="https://github.com/QuantumComputingLab/qclabpp">QCLAB++</a> (C++): quantum circuit simulators.
+I implemented the distributed-memory (MPI) extension of QCLAB++, proposed by R. Van Beeumen, with OpenMP and GPU support.</li>
+</ul>
+
+<h2>Talks</h2>
+<ul>
+<li>Sept. 2026 &mdash; <i>State vector to block encoding: an efficient quantum circuit transformation.</i> ICTCS 2026, Udine, Italy.</li>
+<li>May 2026 &mdash; <i>Efficient encoding of semiseparable matrices in quantum circuits.</i> ILAS 2026, Quantum NLA minisymposium, Virginia Tech, Blacksburg, VA.</li>
+<li>May 2026 &mdash; <i>Quantum spectral methods for Poisson and heat equations.</i> ILAS 2026, Virginia Tech, Blacksburg, VA.</li>
+<li>Oct. 2025 &mdash; <i>Quantum group convolutions for PDEs and equivariant neural networks.</i> THALES Seminar on Quantum Algorithms &amp; Computing, Paris (invited).</li>
+<li>Nov. 2024 &mdash; <i>Variational compression of circuits for state preparation.</i> AIQxQIA Workshop, Bolzano, Italy.</li>
+</ul>
+
+<h2>Research visits</h2>
+<ul>
+<li>Jul.&ndash;Aug. 2025 &mdash; CEMRACS 2025, CIRM, Marseille (selected, fully funded research session).</li>
+<li>Apr.&ndash;Jun. 2025 &mdash; Lawrence Berkeley National Laboratory, with R. Van Beeumen.</li>
+</ul>
+
+<h2>Teaching and outreach</h2>
+<ul>
+<li>Teaching assistant, Introduction to Quantum Computing (M.Sc.), University of Pisa, 2023&ndash;2025: coding labs.</li>
+<li>Co-supervisor of the M.Sc. thesis <i>Widening the Bit: Extending QCLAB to Qudits and Generalizing State Preparation</i> (2026).</li>
+<li>Co-organizer of the Pisa Quantum Festival (2024, 2025); organized and led the 2024 hackathon. Speaker at the Pisa Bright Night 2025.</li>
+</ul>
+
+<hr>
+<p class="small">Last updated: October 2026.</p>
+
+</body>
+</html>
